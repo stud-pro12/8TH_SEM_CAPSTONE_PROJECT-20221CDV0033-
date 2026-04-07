@@ -13,7 +13,7 @@ function Chatbot({ user }) {
   const [inputMessage, setInputMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
-  const [language, setLanguage] = useState('English');
+  const [language, setLanguage] = useState(user?.language || 'English');
   const messagesEndRef = useRef(null);
 
   const languages = ['English', 'Hindi', 'Tamil', 'Telugu', 'Bengali', 'Marathi', 'Gujarati'];

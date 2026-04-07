@@ -159,12 +159,23 @@ function QuizPage({ user, setUser }) {
     try {
       // Check if answer is correct (using default questions logic)
       const currentQ = questions[currentQuestion];
-      const isCorrect = currentQ.correctAnswer === answerIndex;
+      
+      // FIXED: Ensure both are numbers for comparison
+      const correctAnswerIndex = Number(currentQ.correctAnswer);
+      const selectedAnswerIndex = Number(answerIndex);
+      const isCorrect = correctAnswerIndex === selectedAnswerIndex;
+      
+      console.log('DEBUG Quiz:', {
+        question: currentQ.question,
+        correctAnswer: correctAnswerIndex,
+        selectedAnswer: selectedAnswerIndex,
+        isCorrect: isCorrect
+      });
       
       setResultData({
         isCorrect,
         explanation: currentQ.explanation,
-        correctAnswer: currentQ.correctAnswer
+        correctAnswer: correctAnswerIndex
       });
 
       if (isCorrect) {

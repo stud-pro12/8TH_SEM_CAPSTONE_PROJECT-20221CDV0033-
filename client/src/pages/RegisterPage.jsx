@@ -163,7 +163,7 @@ function RegisterPage({ setUser }) {
 
             {/* Language */}
             <div>
-              <label htmlFor="language">Preferred Language *</label>
+              <label htmlFor="language">Preferred Language (for AI Chatbot & SMS) *</label>
               <select
                 id="language"
                 name="language"
